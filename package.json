@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js --url=http://novelmania.com.br/chinesa/ri-indice/ --chapters=1~100",
-    "install": "node install.js"
+    "start": "node lib/index.js --url=http://novelmania.com.br/chinesa/ri-indice/ --chapters=1~4",
+    "install": "node install.js",
+    "build": "tsc --pretty",
+    "start:dev": "npm run build && npm run start"
   },
   "repository": {
     "type": "git",
@@ -23,8 +25,17 @@
     "cheerio": "^1.0.0-rc.3",
     "download": "^7.1.0",
     "epub-gen": "^0.1.0",
+    "md5": "^2.2.1",
     "puppeteer": "^4.0.1",
+    "temp": "^0.9.1",
     "winston": "^3.3.3",
     "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.11.4",
+    "@types/puppeteer": "^3.0.0",
+    "@types/yargs": "^13.0.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1"
   }
 }

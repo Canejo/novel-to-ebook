@@ -5,9 +5,9 @@
     path = require('path');
     temp = require('temp');
     fs = require('fs');
-    module.exports = function (epub, callback) {
+    module.exports = (epub: any, callback: any) => {
       temp.track();
-      return temp.mkdir('node-kindlegen', (error, tempDir) => {
+      return temp.mkdir('node-kindlegen', (error: any, tempDir: any) => {
         let inputPath; let
           outputPath;
         if (error) {
@@ -15,7 +15,7 @@
         }
         inputPath = path.join(tempDir, 'input.epub');
         outputPath = path.join(tempDir, 'output.mobi');
-        return fs.writeFile(inputPath, epub, (error, written, string) => {
+        return fs.writeFile(inputPath, epub, (error: any, written: any, string: any) => {
           let kindlegen;
           if (error) {
             return callback(error);
@@ -24,11 +24,11 @@
             cwd: tempDir,
             env: {},
           });
-          return kindlegen.on('close', (code) => {
+          return kindlegen.on('close', (code: any) => {
             if (code !== 0 && code !== 1) {
               return callback(new Error(`kindlegen returned error ${code}`));
             }
-            return fs.readFile(outputPath, (error, mobi) => {
+            return fs.readFile(outputPath, (error: any, mobi: any) => {
               if (error) {
                 return callback(error);
               }
