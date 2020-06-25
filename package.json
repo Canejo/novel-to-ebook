@@ -1,0 +1,26 @@
+{
+  "name": "novel-to-ebook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Canejo/novel-to-ebook.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Canejo/novel-to-ebook/issues"
+  },
+  "homepage": "https://github.com/Canejo/novel-to-ebook#readme",
+  "dependencies": {
+    "@postlight/mercury-parser": "^2.2.0",
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "puppeteer": "^4.0.1",
+    "yargs": "^15.3.1"
+  }
+}
