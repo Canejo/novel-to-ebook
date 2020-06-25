@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js --url=http://novelmania.com.br/chinesa/ri-indice/ --chapters=1~100",
+    "install": "node install.js"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,10 @@
     "@postlight/mercury-parser": "^2.2.0",
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
+    "download": "^7.1.0",
+    "epub-gen": "^0.1.0",
     "puppeteer": "^4.0.1",
+    "winston": "^3.3.3",
     "yargs": "^15.3.1"
   }
 }
