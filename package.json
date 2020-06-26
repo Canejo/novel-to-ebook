@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node lib/index.js --url=http://novelmania.com.br/chinesa/ri-indice/ --chapters=1~4",
+    "start": "node lib/index.js --url=https://www.wuxiaworld.com/novel/a-will-eternal",
     "install": "node install.js",
     "build": "tsc --pretty",
     "start:dev": "npm run build && npm run start"

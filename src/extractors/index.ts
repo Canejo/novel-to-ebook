@@ -42,7 +42,7 @@ export class Extractors {
         const extractor = this.get(url);
         const webPageEntity = new WebPageEntity();
         if (extractor) {
-            winston.info('[extractor] > Navigating to url');
+            winston.info('> [extractor] Navigating to url');
 
             await page.goto(url, {waitUntil: 'networkidle2'});
             const html = await page.content();
@@ -58,7 +58,7 @@ export class Extractors {
 
                 } else {
                     webPageEntity.title = $(extractor.title.selectors).text();
-                    winston.info('[extractor] > Geting articles');
+                    winston.info('> [extractor] Geting articles');
                     webPageEntity.articles = this.getArticles(url, extractor, $);
                 }
             }

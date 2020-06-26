@@ -9,4 +9,5 @@ export class WebPageEntity {
     firstChapter: number;
     lastChapter: number;
     extractor: IWebSiteCustom;
+    volume: number;
 }

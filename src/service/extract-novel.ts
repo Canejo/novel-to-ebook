@@ -9,7 +9,7 @@ export class ExtractNovel {
         let webPage: WebPageEntity;
 
         if (CacheService.exists(url) && !force) {
-            winston.info('[extract-novel] > Get novel from cache');
+            winston.info('> [extract-novel] Get novel from cache');
             webPage =  CacheService.get<WebPageEntity>(url);
         } else {
             const browser = await puppeteer.launch({
@@ -17,7 +17,7 @@ export class ExtractNovel {
                 headless: true
             });
             try {
-                winston.info('[extract-novel] > Configure to extract novel');
+                winston.info('> [extract-novel] Configure to extract novel');
                 const page = await browser.newPage();
                 webPage = await Extractors.getNovel(url, page);
                 CacheService.set(url, webPage);
@@ -27,7 +27,7 @@ export class ExtractNovel {
                 await browser.close();    
             }
         }
-        winston.info(`[extract-novel] > ${webPage.title} with ${webPage.firstChapter}~${webPage.lastChapter} chapters`);
+        winston.info(`> [extract-novel] ${webPage.title} with ${webPage.firstChapter}~${webPage.lastChapter} chapters`);
         return webPage;
     }
 }
