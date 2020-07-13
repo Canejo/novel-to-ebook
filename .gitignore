@@ -106,3 +106,5 @@ bin/
 lib/
 ebook/*.epub
 ebook/*.mobi
+
+ebook/*/*.json

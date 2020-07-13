@@ -49,15 +49,13 @@ export class DownloadArticles {
 
                 if (article.url) {
                     try {
-                        await page.goto(article.url, {waitUntil: 'networkidle2'});
-                        const html = await page.content();
-                        const result = await Mercury.parse(article.url, {
-                            html
-                        });
+                        // await page.goto(article.url, {waitUntil: 'networkidle2'});
+                        // const html = await page.content();
+                        const result = await Mercury.parse(article.url);
                         article.content = result.content;
                     } catch (e) {
                         winston.error(`> [download-articles] Erro get html from ${article.url}`);
-                        throw e;
+                        // throw e;
                     }
                 }
 
