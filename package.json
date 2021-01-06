@@ -21,7 +21,7 @@
   "homepage": "https://github.com/Canejo/novel-to-ebook#readme",
   "dependencies": {
     "@postlight/mercury-parser": "^2.2.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.3",
     "download": "^7.1.0",
     "epub-gen": "^0.1.0",
